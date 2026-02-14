@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Waaw AI Image Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ff88;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #00ff88;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Waaw AI Image Generator</h1>
+
+  <input type="text" id="prompt" placeholder="Ku qor sawirka aad rabto..." />
+  <br>
+  <button onclick="generateImage()">Samee Sawir</button>
+
+  <div id="result"></div>
+
+  <script>
+    function generateImage() {
+      var text = document.getElementById("prompt").value;
+
+      if(text === "") {
+        alert("Fadlan wax qor");
+        return;
+      }
+
+      var imageUrl = "https://source.unsplash.com/600x400/?" + encodeURIComponent(text);
+
+      document.getElementById("result").innerHTML =
+        "<img src='" + imageUrl + "' />";
+    }
+  </script>
+
+</body>
+</html>
