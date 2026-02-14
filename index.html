@@ -11,9 +11,7 @@
       color: white;
       padding: 20px;
     }
-    h1 {
-      color: #00ff88;
-    }
+    h1 { color: #00ff88; }
     input {
       padding: 10px;
       width: 80%;
@@ -35,29 +33,31 @@
 </head>
 <body>
 
-  <h1>Waaw AI Image Generator</h1>
+<h1>Waaw AI Image Generator</h1>
 
-  <input type="text" id="prompt" placeholder="Ku qor sawirka aad rabto..." />
-  <br>
-  <button onclick="generateImage()">Samee Sawir</button>
+<input type="text" id="prompt" placeholder="Ku qor sawirka aad rabto..." />
+<br>
+<button onclick="generateImage()">Samee Sawir</button>
 
-  <div id="result"></div>
+<div id="result"></div>
 
-  <script>
-    function generateImage() {
-      var text = document.getElementById("prompt").value;
+<script>
+function generateImage() {
+  var text = document.getElementById("prompt").value;
 
-      if(text === "") {
-        alert("Fadlan wax qor");
-        return;
-      }
+  if(text === "") {
+    alert("Fadlan wax qor");
+    return;
+  }
 
-      var imageUrl = "https://source.unsplash.com/600x400/?" + encodeURIComponent(text);
+  var img = document.createElement("img");
+  img.src = "https://picsum.photos/600/400?random=" + Math.random();
 
-      document.getElementById("result").innerHTML =
-        "<img src='" + imageUrl + "' />";
-    }
-  </script>
+  var result = document.getElementById("result");
+  result.innerHTML = "";
+  result.appendChild(img);
+}
+</script>
 
 </body>
 </html>
