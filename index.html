@@ -51,7 +51,8 @@ function generateImage() {
   }
 
   var img = document.createElement("img");
-  img.src = "https://picsum.photos/600/400?random=" + Math.random();
+  img.src = "https://source.unsplash.com/600x400/?" + encodeURIComponent(text);
+
 
   var result = document.getElementById("result");
   result.innerHTML = "";
